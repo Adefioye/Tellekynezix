@@ -99,8 +99,6 @@ The tests verify that:
 - An optimizer step changes model parameters.
 - Seeded training is reproducible and reduces the toy loss.
 
-The same checks run in GitHub Actions with Python 3.11, 3.12, and 3.13.
-
 ## Project layout
 
 ```text
