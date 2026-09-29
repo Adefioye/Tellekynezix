@@ -106,7 +106,7 @@ The same checks run in GitHub Actions with Python 3.11, 3.12, and 3.13.
 ```text
 quantum-ml/
 ├── examples/                  # Executable Bell and hybrid demonstrations
-├── src/tellekynezix_qml/      # Reusable circuit and model code
+├── src/quantum_ml/            # Reusable circuit and model code
 ├── tests/                     # Fast local-simulator tests
 ├── pyproject.toml             # Python and dependency definition
 └── README.md                  # This guide

@@ -2,8 +2,8 @@
 
 import torch
 
-from tellekynezix_qml import BACKEND_NAME, HybridQuantumClassifier
-from tellekynezix_qml.hybrid_model import make_toy_dataset, train_classifier
+from quantum_ml import BACKEND_NAME, HybridQuantumClassifier
+from quantum_ml.hybrid_model import make_toy_dataset, train_classifier
 
 
 def main() -> None:

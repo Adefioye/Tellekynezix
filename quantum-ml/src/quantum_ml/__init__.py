@@ -1,4 +1,4 @@
-"""Quantum machine learning experiments for Tellekynezix."""
+"""Quantum machine learning experiments"""
 
 from .circuits import BACKEND_NAME, bell_state_probabilities
 from .hybrid_model import HybridQuantumClassifier
@@ -8,4 +8,3 @@ __all__ = [
     "HybridQuantumClassifier",
     "bell_state_probabilities",
 ]
-

@@ -20,4 +20,3 @@ def bell_state_probabilities():
     qml.Hadamard(wires=0)
     qml.CNOT(wires=[0, 1])
     return qml.probs(wires=range(N_QUBITS))
-

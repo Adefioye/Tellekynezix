@@ -2,7 +2,7 @@
 
 import math
 
-from tellekynezix_qml import BACKEND_NAME, bell_state_probabilities
+from quantum_ml import BACKEND_NAME, bell_state_probabilities
 
 
 def main() -> None:

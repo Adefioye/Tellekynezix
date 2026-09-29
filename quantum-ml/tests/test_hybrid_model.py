@@ -3,8 +3,8 @@
 import torch
 from torch import nn
 
-from tellekynezix_qml import HybridQuantumClassifier
-from tellekynezix_qml.hybrid_model import make_toy_dataset, train_classifier
+from quantum_ml import HybridQuantumClassifier
+from quantum_ml.hybrid_model import make_toy_dataset, train_classifier
 
 
 def test_hybrid_model_produces_finite_batch_output() -> None:
