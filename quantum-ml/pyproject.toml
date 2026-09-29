@@ -11,6 +11,7 @@ requires-python = ">=3.11,<3.14"
 license = "Apache-2.0"
 dependencies = [
     "pennylane==0.45.1",
+    "tqdm==4.70.1",
     "torch==2.14.0",
 ]
 

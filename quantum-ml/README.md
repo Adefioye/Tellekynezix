@@ -11,7 +11,7 @@ service is required.
 - Python 3.11, 3.12, or 3.13
 - `pip`
 
-The project pins PennyLane, PyTorch, and pytest to tested versions in
+The project pins PennyLane, PyTorch, tqdm, and pytest to tested versions in
 `pyproject.toml`. A virtual environment keeps these dependencies separate from
 the rest of Tellekynezix.
 
@@ -61,7 +61,8 @@ Bell circuit executed successfully.
 ```
 
 The simulator runs analytically, so these probabilities do not contain
-finite-shot sampling noise.
+finite-shot sampling noise. A progress bar reports when circuit execution is
+complete.
 
 ## Run the hybrid model
 
@@ -74,6 +75,8 @@ PyTorch layer converts each input into two rotation angles, a trainable
 two-qubit circuit generates computational-basis probabilities, and another
 PyTorch layer produces class scores. PyTorch backpropagation updates both the
 classical and quantum parameters.
+
+The training command displays epoch progress and the latest loss value.
 
 Exact loss values can vary if the example seed or dependency versions change,
 but the output should end with:

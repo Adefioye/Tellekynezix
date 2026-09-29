@@ -9,7 +9,7 @@ from quantum_ml.hybrid_model import make_toy_dataset, train_classifier
 def main() -> None:
     model = HybridQuantumClassifier(seed=7)
     features, targets = make_toy_dataset()
-    losses = train_classifier(model, features, targets)
+    losses = train_classifier(model, features, targets, show_progress=True)
 
     model.eval()
     with torch.no_grad():

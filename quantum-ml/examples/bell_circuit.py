@@ -3,10 +3,13 @@
 import math
 
 from quantum_ml import BACKEND_NAME, bell_state_probabilities
+from tqdm import tqdm
 
 
 def main() -> None:
-    probabilities = tuple(float(value) for value in bell_state_probabilities())
+    with tqdm(total=1, desc="Running Bell circuit", unit="circuit") as progress:
+        probabilities = tuple(float(value) for value in bell_state_probabilities())
+        progress.update()
     expected_probabilities = (0.5, 0.0, 0.0, 0.5)
     labels = ("|00>", "|01>", "|10>", "|11>")
 

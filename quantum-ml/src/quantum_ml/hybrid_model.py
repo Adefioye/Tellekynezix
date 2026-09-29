@@ -5,6 +5,7 @@ from collections.abc import Sequence
 import pennylane as qml
 import torch
 from torch import nn
+from tqdm import trange
 
 from .circuits import BACKEND_NAME, N_QUBITS
 
@@ -91,8 +92,9 @@ def train_classifier(
     *,
     epochs: int = 20,
     learning_rate: float = 0.1,
+    show_progress: bool = False,
 ) -> Sequence[float]:
-    """Train the example model and return the initial and per-epoch losses."""
+    """Train the model and optionally display epoch progress."""
 
     if epochs < 1:
         raise ValueError("epochs must be at least 1")
@@ -107,7 +109,13 @@ def train_classifier(
         initial_loss = loss_function(model(features), targets).item()
     loss_history = [initial_loss]
 
-    for _ in range(epochs):
+    epoch_iterator = trange(
+        epochs,
+        desc="Training hybrid model",
+        unit="epoch",
+        disable=not show_progress,
+    )
+    for _ in epoch_iterator:
         optimizer.zero_grad()
         loss = loss_function(model(features), targets)
         loss.backward()
@@ -115,5 +123,6 @@ def train_classifier(
 
         with torch.no_grad():
             loss_history.append(loss_function(model(features), targets).item())
+        epoch_iterator.set_postfix(loss=f"{loss_history[-1]:.4f}")
 
     return loss_history
