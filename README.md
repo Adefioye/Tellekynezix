@@ -82,6 +82,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#quantum-machine-learning-environment">Quantum Machine Learning Environment</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -249,6 +250,39 @@ Fill out the pull request form by giving it a meaningful title and a description
 Finally, click the “Create pull request” button.** 
 
 After these steps, your forked repository should be updated with the latest changes from the original repository.<br><br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Quantum Machine Learning Environment
+
+The repository includes a reproducible PennyLane and PyTorch environment for
+running local quantum machine learning experiments. It contains a two-qubit
+Bell circuit and a differentiable hybrid quantum/classical classifier. The
+examples use PennyLane's `default.qubit` simulator, so no cloud account,
+credentials, or quantum hardware are required.
+
+From the repository root, create an isolated environment and install the
+component:
+
+```sh
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e "./quantum-ml[dev]"
+python -m pip check
+```
+
+Run the circuit, hybrid training example, and automated tests:
+
+```sh
+python quantum-ml/examples/bell_circuit.py
+python quantum-ml/examples/train_hybrid_model.py
+python -m pytest quantum-ml/tests -v
+```
+
+Python 3.11, 3.12, and 3.13 are supported. See the
+[Quantum ML guide](quantum-ml/README.md) for Windows installation,
+expected output, architecture details, and troubleshooting.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
