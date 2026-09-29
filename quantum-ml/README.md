@@ -1,4 +1,4 @@
-# Tellekynezix Quantum Machine Learning Environment
+# Quantum Machine Learning Environment
 
 This component provides a reproducible local environment for introductory
 quantum machine learning experiments. It uses PennyLane for quantum circuits,
@@ -13,7 +13,7 @@ service is required.
 
 The project pins PennyLane, PyTorch, tqdm, and pytest to tested versions in
 `pyproject.toml`. A virtual environment keeps these dependencies separate from
-the rest of Tellekynezix.
+the rest of the repository.
 
 ## Installation
 
