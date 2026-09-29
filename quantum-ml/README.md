@@ -22,20 +22,17 @@ Run these commands from the repository root.
 ### macOS and Linux
 
 ```sh
-python3.11 -m venv .venv
+python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e "./quantum-ml[dev]"
 python -m pip check
 ```
 
-Use `python3.12` or `python3.13` in the first command if that is the supported
-version installed on your machine.
-
 ### Windows PowerShell
 
 ```powershell
-py -3.11 -m venv .venv
+python -m venv .venv
 .venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 python -m pip install -e ".\quantum-ml[dev]"
